@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="904f7946-1e81-4124-944e-d317614b234b" name="Changes" comment="Initialization">
+    <list default="true" id="904f7946-1e81-4124-944e-d317614b234b" name="Changes" comment="Added detailed-designs.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +69,31 @@
       <option name="project" value="LOCAL" />
       <updated>1788882567980</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added requirement documents and agents.md">
+      <option name="closed" value="true" />
+      <created>1788888953812</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1788888953812</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added designs.md">
+      <option name="closed" value="true" />
+      <created>1789917257479</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1789917257479</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added detailed-designs.md">
+      <option name="closed" value="true" />
+      <created>1789917414802</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1789917414802</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -77,6 +101,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initialization" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initialization" />
+    <MESSAGE value="Added requirement documents and agents.md" />
+    <MESSAGE value="Added designs.md" />
+    <MESSAGE value="Added detailed-designs.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added detailed-designs.md" />
   </component>
 </project>

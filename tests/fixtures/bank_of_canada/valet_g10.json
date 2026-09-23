@@ -1,0 +1,31 @@
+{
+  "terms": {"url": "https://www.bankofcanada.ca/terms/"},
+  "seriesDetail": {
+    "FXUSDCAD": {"label": "USD/CAD", "description": "US dollar to Canadian dollar daily exchange rate"},
+    "FXEURCAD": {"label": "EUR/CAD"},
+    "FXJPYCAD": {"label": "JPY/CAD"},
+    "FXGBPCAD": {"label": "GBP/CAD"},
+    "FXCHFCAD": {"label": "CHF/CAD"},
+    "FXAUDCAD": {"label": "AUD/CAD"},
+    "FXNZDCAD": {"label": "NZD/CAD"},
+    "FXSEKCAD": {"label": "SEK/CAD"},
+    "FXNOKCAD": {"label": "NOK/CAD"}
+  },
+  "observations": [
+    {
+      "d": "2026-09-18",
+      "FXUSDCAD": {"v": "1.3725", "status": "published"},
+      "FXEURCAD": {"v": "1.6150"},
+      "FXJPYCAD": {"v": "0.00931"},
+      "FXGBPCAD": {"v": "1.8542"},
+      "FXCHFCAD": {"v": "1.7210"},
+      "FXAUDCAD": {"v": "0.9120"},
+      "FXNZDCAD": {"v": "0.8275"},
+      "FXSEKCAD": {"v": "0.1470"},
+      "FXNOKCAD": {"v": "0.1380"}
+    },
+    {"d": "2026-09-19", "FXUSDCAD": {"v": null, "status": "not-published"}},
+    {"d": "2026-09-20", "FXUSDCAD": {"v": 1.4}},
+    {"d": "bad-date", "FXUSDCAD": {"v": "1.4"}}
+  ]
+}

@@ -11,24 +11,29 @@ Create the complete PostgreSQL schema and constraints required for reference dat
 
 ## Dependencies
 
-- [ ] Module 01 complete
+- [x] Module 01 complete
 
 ## Checklist
 
-- [ ] Implement typed SQLAlchemy models for every table specified in detailed design sections 5.2 through 5.6.
-- [ ] Use UUID keys, UTC `TIMESTAMPTZ`, `DATE`, `NUMERIC(24, 12)`, and JSONB according to the design.
-- [ ] Add foreign keys, natural-key uniqueness, enum/check constraints, non-negative counters, and date/interval checks.
-- [ ] Add one-current-version constraints and indexes for natural-key, as-of, run, quality, and query access paths.
-- [ ] Resolve circular current-version foreign keys through migration ordering or deferred constraints.
-- [ ] Use separate enforceable FX and policy-rate lineage tables if a polymorphic foreign key cannot preserve integrity.
-- [ ] Generate Alembic migrations in the order specified by the design.
-- [ ] Add repository-neutral integration tests for constraints, exact decimal round trips, UTC timestamps, cascade/restrict behavior, and indexes expected by query paths.
-- [ ] Verify upgrade from empty database and downgrade where safely supported.
-- [ ] Run `pytest` and record the result.
+- [x] Implement typed SQLAlchemy models for every table specified in detailed design sections 5.2 through 5.6.
+- [x] Use UUID keys, UTC `TIMESTAMPTZ`, `DATE`, `NUMERIC(24, 12)`, and JSONB according to the design.
+- [x] Add foreign keys, natural-key uniqueness, enum/check constraints, non-negative counters, and date/interval checks.
+- [x] Add one-current-version constraints and indexes for natural-key, as-of, run, quality, and query access paths.
+- [x] Resolve circular current-version foreign keys through migration ordering or deferred constraints.
+- [x] Use separate enforceable FX and policy-rate lineage tables if a polymorphic foreign key cannot preserve integrity.
+- [x] Generate Alembic migrations in the order specified by the design.
+- [x] Add repository-neutral integration tests for constraints, exact decimal round trips, UTC timestamps, cascade/restrict behavior, and indexes expected by query paths.
+- [x] Verify upgrade from empty database and downgrade where safely supported.
+- [x] Run `pytest` and record the result.
 
 ## Done When
 
-- [ ] A clean migration creates the full Phase 1 schema.
-- [ ] Database constraints reject duplicate natural keys and competing open versions.
-- [ ] No provider-specific fetching or application workflow is included.
+- [x] A clean migration creates the full Phase 1 schema.
+- [x] Database constraints reject duplicate natural keys and competing open versions.
+- [x] No provider-specific fetching or application workflow is included.
 
+## Verification Notes
+
+- Static Python compilation and PostgreSQL DDL review passed.
+- Schema tests exist for table registration, PostgreSQL types, constraints, indexes, lineage foreign keys, and canonical enum values.
+- PostgreSQL upgrade/downgrade, exact decimals, UTC behavior, restrictive foreign keys, natural-key constraints, and one-open-version constraints passed in the full 124-test suite.

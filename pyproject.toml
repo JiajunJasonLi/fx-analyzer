@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools==75.8.0", "wheel==0.45.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fx-analyzer"
+version = "0.1.0"
+description = "Local FX and policy-rate data platform"
+requires-python = ">=3.11"
+dependencies = [
+  "alembic==1.14.1",
+  "fastapi==0.115.8",
+  "httpx==0.28.1",
+  "psycopg[binary]==3.2.4",
+  "PyYAML==6.0.2",
+  "SQLAlchemy==2.0.38",
+  "uvicorn[standard]==0.34.0",
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest==8.3.4",
+]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = [
+  "performance: representative local performance design-target checks",
+]

@@ -11,27 +11,31 @@ Fetch, parse, and map configured Bank of Canada daily indicative FX observations
 
 ## Dependencies
 
-- [ ] Module 02 complete
-- [ ] Module 04 complete
-- [ ] Module 05 complete
-- [ ] Module 06 complete
+- [x] Module 02 complete
+- [x] Module 04 complete
+- [x] Module 05 complete
+- [x] Module 06 complete
 
 ## Checklist
 
-- [ ] Implement a Valet client using configured HTTPS base URL, endpoint templates, series identifiers, JSON format, and bounded dates.
-- [ ] Group series only where the configured endpoint supports it.
-- [ ] Store each successful raw response before parsing.
-- [ ] Implement the Valet parser for response metadata, series details, dated values, status flags, explicit nulls, and stable raw paths.
-- [ ] Parse source numeric strings directly to `Decimal`.
-- [ ] Implement provider-symbol mapping to exactly one enabled foreign-currency/CAD `fx_series`.
-- [ ] Produce only source-oriented `reference` candidates; never generate reciprocals or non-CAD crosses.
-- [ ] Distinguish non-business days, explicit unpublished values, omitted expected dates, unknown series, malformed records, and response-wide parse failures.
-- [ ] Add representative JSON fixtures and mocked HTTP contract tests for all above outcomes.
-- [ ] Verify all configured nine G10 foreign-currency/CAD mappings.
-- [ ] Run `pytest` and record the result.
+- [x] Implement a Valet client using configured HTTPS base URL, endpoint templates, series identifiers, JSON format, and bounded dates.
+- [x] Group series only where the configured endpoint supports it.
+- [x] Store each successful raw response before parsing.
+- [x] Implement the Valet parser for response metadata, series details, dated values, status flags, explicit nulls, and stable raw paths.
+- [x] Parse source numeric strings directly to `Decimal`.
+- [x] Implement provider-symbol mapping to exactly one enabled foreign-currency/CAD `fx_series`.
+- [x] Produce only source-oriented `reference` candidates; never generate reciprocals or non-CAD crosses.
+- [x] Distinguish non-business days, explicit unpublished values, omitted expected dates, unknown series, malformed records, and response-wide parse failures.
+- [x] Add representative JSON fixtures and mocked HTTP contract tests for all above outcomes.
+- [x] Verify all configured nine G10 foreign-currency/CAD mappings.
+- [x] Run `pytest` and record the result.
 
 ## Done When
 
-- [ ] A bounded fixture request yields traced, validated FX candidates in published orientation.
-- [ ] No normal automated test uses the live Valet API.
+- [x] A bounded fixture request yields traced, validated FX candidates in published orientation.
+- [x] No normal automated test uses the live Valet API.
 
+## Verification Notes
+
+- Bank of Canada contract tests: 11 passed.
+- Full Python 3.12 suite at review: 72 passed, 7 PostgreSQL-dependent tests skipped.

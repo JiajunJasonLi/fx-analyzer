@@ -1,0 +1,2 @@
+"""FX Analyzer application package."""
+

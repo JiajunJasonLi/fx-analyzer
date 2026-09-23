@@ -1,0 +1,2 @@
+"""Query use cases."""
+

@@ -1,0 +1,33 @@
+{
+  "header": {"datasetVersion": "2026-09", "prepared": "2026-09-18T08:00:00+02:00"},
+  "structure": {
+    "dimensions": {
+      "series": [
+        {"id": "REF_AREA", "values": [{"id": "US"}]},
+        {"id": "FREQ", "values": [{"id": "D"}]}
+      ],
+      "observation": [
+        {"id": "TIME_PERIOD", "values": [{"id": "2026-09-17"}, {"id": "2026-09-18"}]}
+      ]
+    },
+    "attributes": {
+      "series": [
+        {"id": "COLLECTION", "values": [{"id": "main"}]},
+        {"id": "UNIT_MEASURE", "values": [{"id": "percent"}]},
+        {"id": "CURRENCY", "values": [{"id": "USD"}]},
+        {"id": "INSTRUMENT", "values": [{"id": "target"}]},
+        {"id": "BAND_NOTE", "values": [{"id": "representative_midpoint"}]}
+      ],
+      "observation": [
+        {"id": "OBS_STATUS", "values": [{"id": "A"}, {"id": "B"}]},
+        {"id": "BREAKS", "values": [{"id": "policy_change"}]}
+      ]
+    }
+  },
+  "dataSets": [{
+    "series": {"0:0": {
+      "attributes": [0, 0, 0, 0, 0],
+      "observations": {"0": ["5.250", 0, null], "1": [null, 1, 0]}
+    }}
+  }]
+}

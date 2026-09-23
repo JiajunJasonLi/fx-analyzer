@@ -1,0 +1,2 @@
+"""Provider-independent domain model."""
+

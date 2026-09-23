@@ -322,6 +322,7 @@ The pair `(base_currency_id, quote_currency_id)` is unique.
 | Column | Type | Notes |
 |---|---|---|
 | `id` | UUID | public run identifier |
+| `parent_run_id` | UUID | nullable self-reference; set only for a linked retry run |
 | `trigger_type` | TEXT | enum constraint |
 | `provider_dataset_id` | UUID | requested dataset |
 | `requested_start` | DATE | inclusive range start |

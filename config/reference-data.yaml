@@ -1,0 +1,138 @@
+currencies:
+  - {code: USD, name: US Dollar, minor_units: 2}
+  - {code: EUR, name: Euro, minor_units: 2}
+  - {code: JPY, name: Japanese Yen, minor_units: 0}
+  - {code: GBP, name: Pound Sterling, minor_units: 2}
+  - {code: CHF, name: Swiss Franc, minor_units: 2}
+  - {code: CAD, name: Canadian Dollar, minor_units: 2}
+  - {code: AUD, name: Australian Dollar, minor_units: 2}
+  - {code: NZD, name: New Zealand Dollar, minor_units: 2}
+  - {code: SEK, name: Swedish Krona, minor_units: 2}
+  - {code: NOK, name: Norwegian Krone, minor_units: 2}
+
+economies:
+  - {code: US, iso_country_code: US, name: United States, time_zone: America/New_York}
+  - {code: XM, name: Euro Area, time_zone: Europe/Brussels, economy_type: currency_union}
+  - {code: JP, iso_country_code: JP, name: Japan, time_zone: Asia/Tokyo}
+  - {code: GB, iso_country_code: GB, name: United Kingdom, time_zone: Europe/London}
+  - {code: CH, iso_country_code: CH, name: Switzerland, time_zone: Europe/Zurich}
+  - {code: CA, iso_country_code: CA, name: Canada, time_zone: America/Toronto}
+  - {code: AU, iso_country_code: AU, name: Australia, time_zone: Australia/Sydney}
+  - {code: NZ, iso_country_code: NZ, name: New Zealand, time_zone: Pacific/Auckland}
+  - {code: SE, iso_country_code: SE, name: Sweden, time_zone: Europe/Stockholm}
+  - {code: "NO", iso_country_code: "NO", name: Norway, time_zone: Europe/Oslo}
+
+economy_currencies:
+  - {economy: US, currency: USD, effective_from: 1900-01-01}
+  - {economy: XM, currency: EUR, effective_from: 1999-01-01}
+  - {economy: JP, currency: JPY, effective_from: 1900-01-01}
+  - {economy: GB, currency: GBP, effective_from: 1900-01-01}
+  - {economy: CH, currency: CHF, effective_from: 1900-01-01}
+  - {economy: CA, currency: CAD, effective_from: 1900-01-01}
+  - {economy: AU, currency: AUD, effective_from: 1900-01-01}
+  - {economy: NZ, currency: NZD, effective_from: 1900-01-01}
+  - {economy: SE, currency: SEK, effective_from: 1900-01-01}
+  - {economy: "NO", currency: NOK, effective_from: 1900-01-01}
+
+fx_pairs:
+  - {symbol: USDCAD, base_currency: USD, quote_currency: CAD}
+  - {symbol: EURCAD, base_currency: EUR, quote_currency: CAD}
+  - {symbol: JPYCAD, base_currency: JPY, quote_currency: CAD}
+  - {symbol: GBPCAD, base_currency: GBP, quote_currency: CAD}
+  - {symbol: CHFCAD, base_currency: CHF, quote_currency: CAD}
+  - {symbol: AUDCAD, base_currency: AUD, quote_currency: CAD}
+  - {symbol: NZDCAD, base_currency: NZD, quote_currency: CAD}
+  - {symbol: SEKCAD, base_currency: SEK, quote_currency: CAD}
+  - {symbol: NOKCAD, base_currency: NOK, quote_currency: CAD}
+
+provider_datasets:
+  - provider_code: bank_of_canada
+    dataset_code: valet_daily_fx
+    display_name: Bank of Canada Valet daily exchange rates
+    configuration_reference: config/reference-data.yaml
+    license_url: https://www.bankofcanada.ca/terms/
+    license_notes: Approved by the project operator on 2026-09-21 for the documented Phase 1 use, including raw-response retention.
+    attribution_text: Source - Bank of Canada
+    redistribution_policy: Attribution required; confirm intended redistribution against provider terms.
+    approval_state: approved
+    retention_permitted: true
+    settings:
+      base_url: https://www.bankofcanada.ca/valet/
+      endpoint_template: observations/{series}
+  - provider_code: bis
+    dataset_code: bis_policy_rates_daily
+    display_name: BIS central bank policy rates
+    configuration_reference: config/reference-data.yaml
+    license_url: https://www.bis.org/terms_conditions.htm
+    license_notes: Approved by the project operator on 2026-09-21 for the documented Phase 1 use, including raw-response retention.
+    attribution_text: Source - Bank for International Settlements
+    redistribution_policy: Confirm intended redistribution against provider terms.
+    approval_state: approved
+    retention_permitted: true
+    settings:
+      base_url: https://stats.bis.org/api/v1/
+      endpoint_template: data/{dataflow}/{series}
+
+fx_series:
+  - {stable_key: boc-fx-usdcad, dataset: 'bank_of_canada:valet_daily_fx', provider_symbol: FXUSDCAD, pair: USDCAD}
+  - {stable_key: boc-fx-eurcad, dataset: 'bank_of_canada:valet_daily_fx', provider_symbol: FXEURCAD, pair: EURCAD}
+  - {stable_key: boc-fx-jpycad, dataset: 'bank_of_canada:valet_daily_fx', provider_symbol: FXJPYCAD, pair: JPYCAD}
+  - {stable_key: boc-fx-gbpcad, dataset: 'bank_of_canada:valet_daily_fx', provider_symbol: FXGBPCAD, pair: GBPCAD}
+  - {stable_key: boc-fx-chfcad, dataset: 'bank_of_canada:valet_daily_fx', provider_symbol: FXCHFCAD, pair: CHFCAD}
+  - {stable_key: boc-fx-audcad, dataset: 'bank_of_canada:valet_daily_fx', provider_symbol: FXAUDCAD, pair: AUDCAD}
+  - {stable_key: boc-fx-nzdcad, dataset: 'bank_of_canada:valet_daily_fx', provider_symbol: FXNZDCAD, pair: NZDCAD}
+  - {stable_key: boc-fx-sekcad, dataset: 'bank_of_canada:valet_daily_fx', provider_symbol: FXSEKCAD, pair: SEKCAD}
+  - {stable_key: boc-fx-nokcad, dataset: 'bank_of_canada:valet_daily_fx', provider_symbol: FXNOKCAD, pair: NOKCAD}
+
+interest_rate_series:
+  # Series keys are explicit configuration, never inferred in business logic.
+  - {stable_key: bis-policy-us, dataset: 'bis:bis_policy_rates_daily', economy: US, currency: USD, dataflow_key: WS_CBPOL, series_key: D.US, collection_indicator: main, title: United States main policy rate}
+  - {stable_key: bis-policy-xm, dataset: 'bis:bis_policy_rates_daily', economy: XM, currency: EUR, dataflow_key: WS_CBPOL, series_key: D.XM, collection_indicator: main, title: Euro area main policy rate}
+  - {stable_key: bis-policy-jp, dataset: 'bis:bis_policy_rates_daily', economy: JP, currency: JPY, dataflow_key: WS_CBPOL, series_key: D.JP, collection_indicator: main, title: Japan main policy rate}
+  - {stable_key: bis-policy-gb, dataset: 'bis:bis_policy_rates_daily', economy: GB, currency: GBP, dataflow_key: WS_CBPOL, series_key: D.GB, collection_indicator: main, title: United Kingdom main policy rate}
+  - {stable_key: bis-policy-ch, dataset: 'bis:bis_policy_rates_daily', economy: CH, currency: CHF, dataflow_key: WS_CBPOL, series_key: D.CH, collection_indicator: main, title: Switzerland main policy rate}
+  - {stable_key: bis-policy-ca, dataset: 'bis:bis_policy_rates_daily', economy: CA, currency: CAD, dataflow_key: WS_CBPOL, series_key: D.CA, collection_indicator: main, title: Canada main policy rate}
+  - {stable_key: bis-policy-au, dataset: 'bis:bis_policy_rates_daily', economy: AU, currency: AUD, dataflow_key: WS_CBPOL, series_key: D.AU, collection_indicator: main, title: Australia main policy rate}
+  - {stable_key: bis-policy-nz, dataset: 'bis:bis_policy_rates_daily', economy: NZ, currency: NZD, dataflow_key: WS_CBPOL, series_key: D.NZ, collection_indicator: main, title: New Zealand main policy rate}
+  - {stable_key: bis-policy-se, dataset: 'bis:bis_policy_rates_daily', economy: SE, currency: SEK, dataflow_key: WS_CBPOL, series_key: D.SE, collection_indicator: main, title: Sweden main policy rate}
+  - {stable_key: bis-policy-no, dataset: 'bis:bis_policy_rates_daily', economy: "NO", currency: NOK, dataflow_key: WS_CBPOL, series_key: D.NO, collection_indicator: main, title: Norway main policy rate}
+
+calendars:
+  - code: canada_business
+    version: "2025-2026-v1"
+    effective_from: 2025-01-01
+    effective_to: 2026-12-31
+    time_zone: America/Toronto
+    weekend_days: [5, 6]
+    holidays: [2025-01-01, 2025-02-17, 2025-04-18, 2025-05-19, 2025-07-01, 2025-08-04, 2025-09-01, 2025-09-30, 2025-10-13, 2025-11-11, 2025-12-25, 2025-12-26, 2026-01-01, 2026-02-16, 2026-04-03, 2026-05-18, 2026-07-01, 2026-08-03, 2026-09-07, 2026-09-30, 2026-10-12, 2026-11-11, 2026-12-25, 2026-12-28]
+  - code: bis_weekly_release
+    version: "2025-2026-v1"
+    effective_from: 2025-01-01
+    effective_to: 2026-12-31
+    time_zone: Europe/Zurich
+    weekend_days: [5, 6]
+    release_weekdays: [3]
+
+expectation_policies:
+  # Bank of Canada publishes one value per Canadian business day around 16:30 ET.
+  - &boc_expectation {instrument_type: fx_pair, instrument_key: boc-fx-usdcad, observation_frequency: daily, calendar: canada_business, publication_time_zone: America/Toronto, publication_time: '16:30', release_cadence: daily_business, release_weekdays: [0, 1, 2, 3, 4], grace_minutes: 60, stale_after_days: 1, effective_from: 2025-01-01, effective_to: 2026-12-31}
+  - {<<: *boc_expectation, instrument_key: boc-fx-eurcad}
+  - {<<: *boc_expectation, instrument_key: boc-fx-jpycad}
+  - {<<: *boc_expectation, instrument_key: boc-fx-gbpcad}
+  - {<<: *boc_expectation, instrument_key: boc-fx-chfcad}
+  - {<<: *boc_expectation, instrument_key: boc-fx-audcad}
+  - {<<: *boc_expectation, instrument_key: boc-fx-nzdcad}
+  - {<<: *boc_expectation, instrument_key: boc-fx-sekcad}
+  - {<<: *boc_expectation, instrument_key: boc-fx-nokcad}
+
+  # BIS observations are daily, but a week's observations are generally released in a weekly batch.
+  - &bis_expectation {instrument_type: policy_rate_series, instrument_key: bis-policy-us, observation_frequency: daily, calendar: bis_weekly_release, publication_time_zone: Europe/Zurich, publication_time: '12:00', release_cadence: weekly, release_weekdays: [3], grace_minutes: 1440, stale_after_days: 7, effective_from: 2025-01-01, effective_to: 2026-12-31}
+  - {<<: *bis_expectation, instrument_key: bis-policy-xm}
+  - {<<: *bis_expectation, instrument_key: bis-policy-jp}
+  - {<<: *bis_expectation, instrument_key: bis-policy-gb}
+  - {<<: *bis_expectation, instrument_key: bis-policy-ch}
+  - {<<: *bis_expectation, instrument_key: bis-policy-ca}
+  - {<<: *bis_expectation, instrument_key: bis-policy-au}
+  - {<<: *bis_expectation, instrument_key: bis-policy-nz}
+  - {<<: *bis_expectation, instrument_key: bis-policy-se}
+  - {<<: *bis_expectation, instrument_key: bis-policy-no}
